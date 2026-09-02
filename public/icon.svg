@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle inner border -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="6"/>
+
+  <!-- Track Curve Accent -->
+  <path d="M 60 380 Q 256 460 452 380" fill="none" stroke="#f97316" stroke-width="12" stroke-linecap="round" stroke-dasharray="16 12" opacity="0.8"/>
+
+  <!-- Runner Icon Silhouette (Dynamic running motion) -->
+  <g transform="translate(136, 90) scale(0.95)">
+    <!-- Head -->
+    <circle cx="160" cy="50" r="28" fill="#ffffff" />
+    
+    <!-- Torso -->
+    <path d="M 145 90 L 175 90 L 155 190 L 125 185 Z" fill="#ffffff" />
+    
+    <!-- Left Arm forward -->
+    <path d="M 155 105 L 215 130 L 255 110" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Right Arm back -->
+    <path d="M 145 105 L 95 130 L 70 165" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Right Leg forward (knee high) -->
+    <path d="M 150 185 L 195 240 L 235 235" fill="none" stroke="#f97316" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Left Leg trailing back -->
+    <path d="M 135 185 L 85 245 L 50 315" fill="none" stroke="#10b981" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Badge Text 10K & LEFKOŞA -->
+  <rect x="166" y="380" width="180" height="46" rx="23" fill="url(#accentGrad)" />
+  <text x="256" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">10K • 48:00</text>
+</svg>

@@ -1,0 +1,6 @@
+{
+  "name": "Lefkoşa 10K Maraton Hazırlık",
+  "description": "11 Ekim 2026 Lefkoşa Maratonu (10K) 5.5 haftalık antrenman takvimi, takviye protokolü, günlük hatırlatıcılar ve PWA akış uygulaması.",
+  "requestFramePermissions": ["notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
