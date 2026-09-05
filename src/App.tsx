@@ -40,40 +40,65 @@ export default function App() {
 
   // Done map for workouts / days: Record<iso, timestamp>
   const [doneMap, setDoneMap] = useState<Record<string, number>>(() => {
+    const baseDone: Record<string, number> = {
+      '2026-09-02': 1725264000000,
+      '2026-09-05': 1725523200000,
+    };
     try {
       const saved = localStorage.getItem(STORAGE_LOGS);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.done) return parsed.done;
+        if (parsed.done) {
+          const merged = { ...baseDone, ...parsed.done };
+          delete merged['2026-09-04']; // 4 Eylül'de koşu yapılmadı
+          merged['2026-09-05'] = merged['2026-09-05'] || Date.now(); // 5 Eylül'de HIIT tamamlandı
+          return merged;
+        }
       }
     } catch {}
-    return { '2026-09-02': Date.now() }; // Day 1 marked done as per original training log
+    return baseDone;
   });
 
   // Supplement logs: Record<iso, Record<suppId, timestamp>>
   const [suppMap, setSuppMap] = useState<Record<string, Record<string, number>>>(() => {
+    const baseSupp: Record<string, Record<string, number>> = {
+      '2026-09-02': { nac: Date.now(), o3: Date.now(), mg: Date.now() },
+      '2026-09-05': { nac: Date.now(), o3: Date.now(), cr: Date.now(), ber: Date.now(), mg: Date.now() },
+    };
     try {
       const saved = localStorage.getItem(STORAGE_LOGS);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.supp) return parsed.supp;
+        if (parsed.supp) {
+          return { ...baseSupp, ...parsed.supp };
+        }
       }
     } catch {}
-    return {
-      '2026-09-02': { nac: Date.now(), o3: Date.now(), mg: Date.now() },
-    };
+    return baseSupp;
   });
 
   // Notes map: Record<iso, noteText>
   const [notesMap, setNotesMap] = useState<Record<string, string>>(() => {
+    const baseNotes: Record<string, string> = {
+      '2026-09-02': 'Açılış koşusu tamamlandı. 10.15 km 5\'46" /km',
+      '2026-09-04': 'Koşu yapılmadı.',
+      '2026-09-05': 'HIIT yapıldı: 4 km · 23 dk. 4 defa sprint, 4 defa jogging. En hızlı tempo: 3\'58" /km görüldü.',
+    };
     try {
       const saved = localStorage.getItem(STORAGE_LOGS);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.notes) return parsed.notes;
+        if (parsed.notes) {
+          return {
+            ...baseNotes,
+            ...parsed.notes,
+            '2026-09-04': parsed.notes['2026-09-04'] || 'Koşu yapılmadı.',
+            '2026-09-05': parsed.notes['2026-09-05'] || baseNotes['2026-09-05'],
+          };
+        }
       }
     } catch {}
-    return { '2026-09-02': 'Açılış koşusu tamamlandı. 10.15 km 5\'46" /km' };
+    return baseNotes;
   });
 
   // Reminder settings

@@ -67,8 +67,8 @@ const R = (d: string, w: number, t: string, desc: string): PlanDay =>
 export const ATHLETIC_PLAN: PlanDay[] = [
   P('2026-09-02', 1, 'easy', 'Metehan Dönüşlü', 10.15, '10.15 km', 'Rahat Koşu', 'Program açılışı — tamamen rahat ve eforsuz ritim.', [['Rahat Blok', '10.15 km kesintisiz, eforsuz koşu', '5\'46" /km · 158 bpm']], null, 'Açılış koşusu tamamlandı.'),
   R('2026-09-03', 1, 'Tam Dinlenme', 'Pasif toparlanma.'),
-  P('2026-09-04', 1, 'quality', 'Metehan Dönüşlü', 10.15, '10.15 km', 'İlerleme Koşusu', 'Üç bloklu ilerleme: rahat aç, yarış temposunda kapat.', [['Rahat', '5.5 km', '5\'40" /km'], ['Yarış Temposu', '3 km', '5\'05" /km'], ['Jog', '1.6 km', '6\'00" /km']]),
-  R('2026-09-05', 1, 'Dinlenme', 'Hafif yürüyüş / esneme.'),
+  P('2026-09-04', 1, 'rest', null, null, null, 'Koşu Yapılmadı · Dinlenme', '4 Eylül\'de planlanan koşu yapılmadı; pasif toparlanma günü olarak geçirildi.', [], [], 'Koşu yapılmadı.'),
+  P('2026-09-05', 1, 'quality', 'Tartan Pist / Cadde', 4, '4 km · 23 dk', 'HIIT (4 Sprint + 4 Jog)', '4 km 23 dakikada tamamlandı. 4 sprint + 4 jogging tekrarı, en yüksek hız 3\'58" /km görüldü.', [['Sprint Blokları', '4× Yüksek Efor Sprint', 'Maks 3\'58" /km'], ['Toparlanma Jog', '4× Aktif Toparlanma Jogging', 'Kontrollü ritim'], ['Toplam Süre & Hacim', '4 km toplam koşu mesafesi', '23:00 dk (Ort. ~5\'45" /km)']], [['Mesafe', '4.00 km'], ['Süre', '23 dk'], ['En Hızlı', '3\'58" /km'], ['Format', '4 Sprint + 4 Jog']], 'HIIT tamamlandı: 4 km 23 dakikada koşuldu. 4 sprint + 4 jogging yapıldı. En yüksek hız 3\'58" /km görüldü.'),
   P('2026-09-06', 1, 'long', 'Lemar Işıkları', 9.74, '9.74 km', 'Eforsuz Uzun', 'Sabit ritim aerobik koşu.', [], [['Pace', '5\'45"–5\'55" /km']]),
   R('2026-09-07', 2, 'Tam Dinlenme', 'Pasif toparlanma.'),
   P('2026-09-08', 2, 'quality', 'Tartan Pist · Belediye Karşısı', null, '1.5 km + 10×30/30 + 1 km', 'HIIT 30/30', 'Kısa hız bloklarıyla bacak hızını uyandırma.', [['Isınma', '1.5 km kolay koşu', '—'], ['Ana Blok', '10× (30 sn hızlı / 30 sn yavaş jog)', '4\'20"–4\'30" /km'], ['Soğuma', '1 km jog', '—']]),
